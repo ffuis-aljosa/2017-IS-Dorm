@@ -25,3 +25,4 @@ C:\Users\CHS-SHOP\documents\visual studio 2017\Projects\StudentskiDom\Studentski
 C:\Users\CHS-SHOP\documents\visual studio 2017\Projects\StudentskiDom\StudentskiDom\bin\Debug\System.Data.SqlServerCe.dll
 C:\Users\CHS-SHOP\documents\visual studio 2017\Projects\StudentskiDom\StudentskiDom\bin\Debug\EntityFramework.SqlServerCompact.xml
 C:\Users\CHS-SHOP\documents\visual studio 2017\Projects\StudentskiDom\StudentskiDom\obj\Debug\StudentskiDom.Warning.resources
+C:\Users\CHS-SHOP\documents\visual studio 2017\Projects\StudentskiDom\StudentskiDom\obj\Debug\StudentskiDom.Remove_Student_or_Employee.resources

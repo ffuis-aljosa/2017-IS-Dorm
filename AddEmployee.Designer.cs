@@ -32,6 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.confPassTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.passTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -41,14 +47,6 @@
             this.addBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.passTextBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.confPassTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.wrongPassBtn = new System.Windows.Forms.Button();
-            this.takenUserNameBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,8 +76,6 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.takenUserNameBtn);
-            this.panel1.Controls.Add(this.wrongPassBtn);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.confPassTextBox);
             this.panel1.Controls.Add(this.label6);
@@ -102,6 +98,65 @@
             this.panel1.Size = new System.Drawing.Size(407, 307);
             this.panel1.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(243, 256);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 19);
+            this.label7.TabIndex = 41;
+            this.label7.Text = "potvrdi šifru:";
+            // 
+            // confPassTextBox
+            // 
+            this.confPassTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.confPassTextBox.Location = new System.Drawing.Point(201, 278);
+            this.confPassTextBox.Name = "confPassTextBox";
+            this.confPassTextBox.Size = new System.Drawing.Size(170, 26);
+            this.confPassTextBox.TabIndex = 40;
+            this.confPassTextBox.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(268, 203);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 19);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "šifra:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(48, 203);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 19);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "korisničko ime:";
+            // 
+            // passTextBox
+            // 
+            this.passTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.passTextBox.Location = new System.Drawing.Point(201, 225);
+            this.passTextBox.Name = "passTextBox";
+            this.passTextBox.Size = new System.Drawing.Size(170, 26);
+            this.passTextBox.TabIndex = 37;
+            this.passTextBox.UseSystemPasswordChar = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBox1.Location = new System.Drawing.Point(15, 225);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 26);
+            this.textBox1.TabIndex = 36;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -109,10 +164,10 @@
             this.radioButton3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.Location = new System.Drawing.Point(175, 183);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 23);
+            this.radioButton3.Size = new System.Drawing.Size(64, 23);
             this.radioButton3.TabIndex = 35;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Čuvar:";
+            this.radioButton3.Text = "Čuvar";
             this.radioButton3.UseVisualStyleBackColor = false;
             // 
             // radioButton2
@@ -122,10 +177,10 @@
             this.radioButton2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(175, 160);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(106, 23);
+            this.radioButton2.Size = new System.Drawing.Size(103, 23);
             this.radioButton2.TabIndex = 34;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Recepcionar:";
+            this.radioButton2.Text = "Recepcionar";
             this.radioButton2.UseVisualStyleBackColor = false;
             // 
             // radioButton1
@@ -135,10 +190,10 @@
             this.radioButton1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(175, 137);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(81, 23);
+            this.radioButton1.Size = new System.Drawing.Size(78, 23);
             this.radioButton1.TabIndex = 33;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Direktor:";
+            this.radioButton1.Text = "Direktor";
             this.radioButton1.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker1
@@ -148,7 +203,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(175, 97);
             this.dateTimePicker1.MaxDate = new System.DateTime(2018, 2, 10, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(1988, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1945, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(208, 26);
             this.dateTimePicker1.TabIndex = 32;
@@ -203,87 +258,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Godište:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBox1.Location = new System.Drawing.Point(15, 225);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 26);
-            this.textBox1.TabIndex = 36;
-            // 
-            // passTextBox
-            // 
-            this.passTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.passTextBox.Location = new System.Drawing.Point(201, 225);
-            this.passTextBox.Name = "passTextBox";
-            this.passTextBox.Size = new System.Drawing.Size(170, 26);
-            this.passTextBox.TabIndex = 37;
-            this.passTextBox.UseSystemPasswordChar = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 203);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 19);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "korisničko ime:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(268, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 19);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "šifra:";
-            // 
-            // confPassTextBox
-            // 
-            this.confPassTextBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.confPassTextBox.Location = new System.Drawing.Point(201, 278);
-            this.confPassTextBox.Name = "confPassTextBox";
-            this.confPassTextBox.Size = new System.Drawing.Size(170, 26);
-            this.confPassTextBox.TabIndex = 40;
-            this.confPassTextBox.UseSystemPasswordChar = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(243, 256);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 19);
-            this.label7.TabIndex = 41;
-            this.label7.Text = "potvrdi šifru:";
-            // 
-            // wrongPassBtn
-            // 
-            this.wrongPassBtn.BackColor = System.Drawing.Color.Red;
-            this.wrongPassBtn.Enabled = false;
-            this.wrongPassBtn.Location = new System.Drawing.Point(375, 252);
-            this.wrongPassBtn.Name = "wrongPassBtn";
-            this.wrongPassBtn.Size = new System.Drawing.Size(20, 20);
-            this.wrongPassBtn.TabIndex = 42;
-            this.wrongPassBtn.UseVisualStyleBackColor = false;
-            this.wrongPassBtn.Visible = false;
-            // 
-            // takenUserNameBtn
-            // 
-            this.takenUserNameBtn.BackColor = System.Drawing.Color.Red;
-            this.takenUserNameBtn.Enabled = false;
-            this.takenUserNameBtn.Location = new System.Drawing.Point(90, 255);
-            this.takenUserNameBtn.Name = "takenUserNameBtn";
-            this.takenUserNameBtn.Size = new System.Drawing.Size(20, 20);
-            this.takenUserNameBtn.TabIndex = 43;
-            this.takenUserNameBtn.UseVisualStyleBackColor = false;
-            this.takenUserNameBtn.Visible = false;
-            // 
             // AddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,8 +267,9 @@
             this.MaximumSize = new System.Drawing.Size(420, 344);
             this.MinimumSize = new System.Drawing.Size(420, 344);
             this.Name = "AddEmployee";
-            this.Text = "AddEmployee";
+            this.Text = "Dodaj Zaposlenog";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddEmployee_FormClosing);
+            this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -321,7 +296,5 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox confPassTextBox;
-        private System.Windows.Forms.Button wrongPassBtn;
-        private System.Windows.Forms.Button takenUserNameBtn;
     }
 }

@@ -124,6 +124,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(166, 26);
             this.passwordTextBox.TabIndex = 19;
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordTextBox_KeyDown);
             // 
             // userNameTextBox
             // 
@@ -145,7 +146,7 @@
             this.MaximumSize = new System.Drawing.Size(420, 344);
             this.MinimumSize = new System.Drawing.Size(420, 344);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Pocetna";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

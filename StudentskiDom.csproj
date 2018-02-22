@@ -98,6 +98,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remove Student or Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Remove Student or Employee.Designer.cs">
+      <DependentUpon>Remove Student or Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Warning.cs">
       <SubType>Form</SubType>
@@ -121,6 +127,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remove Student or Employee.resx">
+      <DependentUpon>Remove Student or Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warning.resx">
       <DependentUpon>Warning.cs</DependentUpon>

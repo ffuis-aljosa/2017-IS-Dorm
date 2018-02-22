@@ -34,7 +34,13 @@ namespace StudentskiDom
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            if (firstNameTextBox.Text != "" && LastNameTextBox.Text != "")
+            if (firstNameTextBox.Text == "" || LastNameTextBox.Text == "" || comboBox1.Text == "" 
+                || comboBox2.Text == "" || (radioButton1.Checked ==false && radioButton2.Checked == false))
+            {
+                MessageBox.Show("Niste unijeli sve podatke");
+
+            }
+            else
             {
                 try
                 {
@@ -67,16 +73,32 @@ namespace StudentskiDom
                         }
                         MessageBox.Show("Dodali ste studenta " + firstNameTextBox.Text + " " + LastNameTextBox.Text);
 
+                        firstNameTextBox.Text = "";
+                        LastNameTextBox.Text = "";
+                        comboBox1.SelectedIndex = -1;
+                        comboBox2.SelectedIndex = -1;
+                        radioButton1.Checked = false;
+                        radioButton2.Checked = false;
+                        dateTimePicker1.Value = new DateTime(1993, 04, 16);
+                        con.Close();
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
-            else
-                MessageBox.Show("Niste unijeli ispravne podatke");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void AddStudent_Load(object sender, EventArgs e)
+        {
+            dateTimePicker1.MaxDate = DateTime.Now;
+
+            dateTimePicker1.Value = new DateTime(1993, 04, 16);
         }
     }
     }

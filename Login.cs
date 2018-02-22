@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Data.SQLite;
 using System.IO;
-
+using System.Security.Cryptography;
 namespace StudentskiDom
 {
     public partial class Login : Form
@@ -34,10 +34,10 @@ namespace StudentskiDom
                     {
                         while (rdr.Read())
                         {
-                            Employee stud = new Employee(rdr["Ime"].ToString(), rdr["Prezime"].ToString(),
+                            Employee emplo = new Employee(rdr["Ime"].ToString(), rdr["Prezime"].ToString(),
                                 rdr["Godiste"].ToString(), rdr["Pozicija"].ToString(), rdr["Username"].ToString(),
                                 rdr["Password"].ToString());
-                            employeeList.Add(stud);    
+                            employeeList.Add(emplo);    
                         }
 
                     }
@@ -45,7 +45,8 @@ namespace StudentskiDom
                 con.Close();
             }
         }
-        
+        public static string dopustenja;
+        public static string ulogovaniImePrezime;
 
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -62,6 +63,8 @@ namespace StudentskiDom
                 {
                     username = employeeList[i].Username;
                     password = employeeList[i].Password;
+                    dopustenja = employeeList[i].Position;
+                    ulogovaniImePrezime = employeeList[i].FirstName + " " + employeeList[i].LastName;
                 }
             }
              
@@ -69,15 +72,16 @@ namespace StudentskiDom
             {
                 MessageBox.Show("Neispravni podaci");
             }
-            else if (userNameTextBox.Text == username && passwordTextBox.Text == password)
+            else if (userNameTextBox.Text == username && getSHA1(passwordTextBox.Text) == password)
             {
+                
                 Form1 f1 = new Form1();
                 f1.Show();
                 Visible = false;
             }
             else
             {
-                MessageBox.Show("Nespravni podaci");
+                MessageBox.Show("Neispravni podaci");
             }
 
         }
@@ -92,6 +96,52 @@ namespace StudentskiDom
                 passwordTextBox.UseSystemPasswordChar = true;
         }
 
-        
+        public string getSHA1(string text)
+        {
+            SHA1CryptoServiceProvider sh = new SHA1CryptoServiceProvider();
+            sh.ComputeHash(ASCIIEncoding.ASCII.GetBytes(text));
+            byte[] re = sh.Hash;
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in re)
+            {
+                sb.Append(b.ToString("x2"));
+            }
+            return sb.ToString();
+        }
+
+        private void passwordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string username = "";
+                string password = "";
+                for (int i = 0; i < employeeList.Count(); i++)
+                {
+                    if (employeeList[i].Username == userNameTextBox.Text)
+                    {
+                        username = employeeList[i].Username;
+                        password = employeeList[i].Password;
+                        dopustenja = employeeList[i].Position;
+                        ulogovaniImePrezime = employeeList[i].FirstName + " " + employeeList[i].LastName;
+                    }
+                }
+
+                if (userNameTextBox.Text == "" || passwordTextBox.Text == "")
+                {
+                    MessageBox.Show("Neispravni podaci");
+                }
+                else if (userNameTextBox.Text == username && getSHA1(passwordTextBox.Text) == password)
+                {
+
+                    Form1 f1 = new Form1();
+                    f1.Show();
+                    Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Nespravni podaci");
+                }
+            }
+        }
     }
 }

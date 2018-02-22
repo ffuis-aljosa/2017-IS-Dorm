@@ -36,8 +36,8 @@
             // warningTextBox
             // 
             this.warningTextBox.Location = new System.Drawing.Point(1, 1);
-            this.warningTextBox.MaximumSize = new System.Drawing.Size(400, 300);
-            this.warningTextBox.MinimumSize = new System.Drawing.Size(300, 20);
+            this.warningTextBox.MaximumSize = new System.Drawing.Size(382, 97);
+            this.warningTextBox.MinimumSize = new System.Drawing.Size(382, 97);
             this.warningTextBox.Multiline = true;
             this.warningTextBox.Name = "warningTextBox";
             this.warningTextBox.Size = new System.Drawing.Size(382, 97);
@@ -71,8 +71,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.warningTextBox);
+            this.MaximumSize = new System.Drawing.Size(400, 158);
+            this.MinimumSize = new System.Drawing.Size(400, 158);
             this.Name = "Warning";
-            this.Text = "Warning";
+            this.Text = "Opomena";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Warning_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,6 +28,7 @@ namespace StudentskiDom
             string connectionString = @"Data Source = database.db";
             try
             {
+;
                 using (SQLiteConnection con = new SQLiteConnection(connectionString))
                 {
                     SQLiteCommand cmd = new SQLiteCommand();
@@ -36,7 +37,7 @@ namespace StudentskiDom
                     cmd.Parameters.Add(new SQLiteParameter("@warn", warningTextBox.Text));
 
                     con.Open();
-
+                    
                     int i = cmd.ExecuteNonQuery();
 
                     if (i == 1)

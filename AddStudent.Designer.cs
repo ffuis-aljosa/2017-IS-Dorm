@@ -109,6 +109,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -122,6 +123,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
@@ -129,7 +131,7 @@
             "II",
             "III",
             "IV",
-            "Apsolven",
+            "Apsolvent",
             "Master"});
             this.comboBox2.Location = new System.Drawing.Point(185, 177);
             this.comboBox2.Name = "comboBox2";
@@ -164,7 +166,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Imprint MT Shadow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(185, 97);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2018, 2, 10, 0, 0, 0, 0);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2018, 2, 1, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1988, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(208, 26);
@@ -219,6 +221,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(407, 309);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label3
             // 
@@ -241,8 +244,9 @@
             this.MaximumSize = new System.Drawing.Size(420, 344);
             this.MinimumSize = new System.Drawing.Size(420, 344);
             this.Name = "AddStudent";
-            this.Text = "AddStudent";
+            this.Text = "Dodaj Studenta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddStudent_FormClosing);
+            this.Load += new System.EventHandler(this.AddStudent_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
