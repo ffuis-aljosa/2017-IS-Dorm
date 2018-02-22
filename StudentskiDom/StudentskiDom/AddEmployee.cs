@@ -75,62 +75,68 @@ namespace StudentskiDom
                     }
                     else
                     {
-                        
 
-                        try
+                        if (passTextBox.Text.Any(char.IsDigit) && passTextBox.Text.Any(char.IsUpper) && passTextBox.Text.Length > 7)
                         {
-                            using (SQLiteConnection con = new SQLiteConnection(connectionString))
+                            try
                             {
-                                con.Open();
-                                SQLiteCommand cmd = new SQLiteCommand();
-                                cmd.CommandText = @"INSERT INTO zaposleni (Ime, Prezime, Godiste, Pozicija, 
+                                using (SQLiteConnection con = new SQLiteConnection(connectionString))
+                                {
+                                    con.Open();
+                                    SQLiteCommand cmd = new SQLiteCommand();
+                                    cmd.CommandText = @"INSERT INTO zaposleni (Ime, Prezime, Godiste, Pozicija, 
                                                                    Username, Password)
                                      VALUES (@name, @surname, @dateofbirth, @position, @username, @password)";
-                                cmd.Connection = con;
-                                cmd.Parameters.Add(new SQLiteParameter("@name", firstNameTextBox.Text));
-                                cmd.Parameters.Add(new SQLiteParameter("@surname", LastNameTextBox.Text));
-                                cmd.Parameters.Add(new SQLiteParameter("@dateofbirth", dateTimePicker1.Text));
+                                    cmd.Connection = con;
+                                    cmd.Parameters.Add(new SQLiteParameter("@name", firstNameTextBox.Text));
+                                    cmd.Parameters.Add(new SQLiteParameter("@surname", LastNameTextBox.Text));
+                                    cmd.Parameters.Add(new SQLiteParameter("@dateofbirth", dateTimePicker1.Text));
 
-                                if (radioButton1.Checked)
-                                {
-                                    cmd.Parameters.Add(new SQLiteParameter("@position", radioButton1.Text));
-                                }
-                                else if (radioButton2.Checked)
-                                {
-                                    cmd.Parameters.Add(new SQLiteParameter("@position", radioButton2.Text));
-                                }
-                                else if (radioButton3.Checked)
-                                {
-                                    cmd.Parameters.Add(new SQLiteParameter("@position", radioButton3.Text));
-                                }
+                                    if (radioButton1.Checked)
+                                    {
+                                        cmd.Parameters.Add(new SQLiteParameter("@position", radioButton1.Text));
+                                    }
+                                    else if (radioButton2.Checked)
+                                    {
+                                        cmd.Parameters.Add(new SQLiteParameter("@position", radioButton2.Text));
+                                    }
+                                    else if (radioButton3.Checked)
+                                    {
+                                        cmd.Parameters.Add(new SQLiteParameter("@position", radioButton3.Text));
+                                    }
 
-                                cmd.Parameters.Add(new SQLiteParameter("@username", textBox1.Text));
-                                cmd.Parameters.Add(new SQLiteParameter("@password", getSHA1(passTextBox.Text)));
-                                
-                                int i = cmd.ExecuteNonQuery();
-                                if (i == 0)
-                                {
-                                    MessageBox.Show("Created");
+                                    cmd.Parameters.Add(new SQLiteParameter("@username", textBox1.Text));
+                                    cmd.Parameters.Add(new SQLiteParameter("@password", getSHA1(passTextBox.Text)));
+
+                                    int i = cmd.ExecuteNonQuery();
+                                    if (i == 0)
+                                    {
+                                        MessageBox.Show("Created");
+                                    }
+                                    MessageBox.Show("Dodali ste zaposlenog " + firstNameTextBox.Text + " " + LastNameTextBox.Text);
+                                    usernameList.Add(textBox1.Text);
+                                    con.Close();
+
+                                    firstNameTextBox.Text = "";
+                                    LastNameTextBox.Text = "";
+                                    textBox1.Text = "";
+                                    passTextBox.Text = "";
+                                    confPassTextBox.Text = "";
+                                    radioButton1.Checked = false;
+                                    radioButton2.Checked = false;
+                                    radioButton3.Checked = false;
+
+                                    dateTimePicker1.Value = new DateTime(1993, 04, 16);
                                 }
-                                MessageBox.Show("Dodali ste zaposlenog " + firstNameTextBox.Text + " " + LastNameTextBox.Text);
-                                usernameList.Add(textBox1.Text);
-                                con.Close();
-
-                                firstNameTextBox.Text = "";
-                                LastNameTextBox.Text = "";
-                                textBox1.Text = "";
-                                passTextBox.Text = "";
-                                confPassTextBox.Text = "";
-                                radioButton1.Checked = false;
-                                radioButton2.Checked = false;
-                                radioButton3.Checked = false;
-
-                                dateTimePicker1.Value = new DateTime(1993, 04, 16);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
                             }
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("Password mora imati bar 8 karaktera, jedno veliko slovo i jedan broj!");
                         }
                     }
                 }
